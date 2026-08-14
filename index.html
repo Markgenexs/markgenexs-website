@@ -3,17 +3,627 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Markgenexs - Growth Marketing Built Around Results</title>
+
+  <title>MarkGenexs | Turn Marketing Into Measurable Growth</title>
+
+  <meta
+    name="description"
+    content="MarkGenexs helps ambitious businesses generate qualified leads, acquire customers and scale through performance marketing."
+  >
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      background: #0a0a0a;
+      color: #ffffff;
+      line-height: 1.6;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .container {
+      width: min(1120px, 92%);
+      margin: 0 auto;
+    }
+
+    /* NAVBAR */
+
+    nav {
+      padding: 24px 0;
+      border-bottom: 1px solid #222;
+    }
+
+    .nav-inner {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .logo {
+      font-size: 24px;
+      font-weight: 800;
+      letter-spacing: -0.5px;
+    }
+
+    .logo span {
+      color: #8b5cf6;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 28px;
+      color: #b5b5b5;
+      font-size: 14px;
+    }
+
+    .nav-links a:hover {
+      color: #ffffff;
+    }
+
+    .nav-button {
+      background: #ffffff;
+      color: #000000;
+      padding: 11px 18px;
+      border-radius: 8px;
+      font-weight: 700;
+      font-size: 14px;
+    }
+
+    /* HERO */
+
+    .hero {
+      padding: 110px 0 100px;
+      text-align: center;
+    }
+
+    .eyebrow {
+      display: inline-block;
+      border: 1px solid #333;
+      color: #bdbdbd;
+      padding: 8px 14px;
+      border-radius: 999px;
+      font-size: 13px;
+      margin-bottom: 28px;
+    }
+
+    .hero h1 {
+      max-width: 900px;
+      margin: 0 auto;
+      font-size: clamp(48px, 8vw, 88px);
+      line-height: 0.98;
+      letter-spacing: -4px;
+    }
+
+    .hero h1 span {
+      color: #8b5cf6;
+    }
+
+    .hero p {
+      max-width: 680px;
+      margin: 30px auto;
+      color: #a9a9a9;
+      font-size: 18px;
+    }
+
+    .hero-buttons {
+      display: flex;
+      justify-content: center;
+      gap: 14px;
+      margin-top: 34px;
+      flex-wrap: wrap;
+    }
+
+    .primary-button {
+      background: #8b5cf6;
+      color: #ffffff;
+      padding: 15px 24px;
+      border-radius: 8px;
+      font-weight: 700;
+    }
+
+    .secondary-button {
+      border: 1px solid #333;
+      padding: 15px 24px;
+      border-radius: 8px;
+      color: #ffffff;
+    }
+
+    /* SECTION */
+
+    section {
+      padding: 90px 0;
+      border-top: 1px solid #1d1d1d;
+    }
+
+    .section-heading {
+      max-width: 650px;
+      margin-bottom: 45px;
+    }
+
+    .section-heading h2 {
+      font-size: 42px;
+      line-height: 1.1;
+      margin-bottom: 15px;
+    }
+
+    .section-heading p {
+      color: #999;
+    }
+
+    /* SERVICES */
+
+    .services {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+    }
+
+    .service-card {
+      border: 1px solid #292929;
+      border-radius: 14px;
+      padding: 30px;
+      background: #101010;
+    }
+
+    .service-number {
+      color: #8b5cf6;
+      font-size: 14px;
+      font-weight: 700;
+      margin-bottom: 25px;
+    }
+
+    .service-card h3 {
+      font-size: 22px;
+      margin-bottom: 12px;
+    }
+
+    .service-card p {
+      color: #999;
+      font-size: 15px;
+    }
+
+    /* PROCESS */
+
+    .process {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 12px;
+    }
+
+    .process-step {
+      padding: 24px 10px;
+      border-top: 2px solid #8b5cf6;
+    }
+
+    .process-step strong {
+      display: block;
+      margin-bottom: 8px;
+    }
+
+    .process-step span {
+      color: #888;
+      font-size: 14px;
+    }
+
+    /* WHY */
+
+    .why-box {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 40px;
+      align-items: center;
+    }
+
+    .why-box h2 {
+      font-size: 44px;
+      line-height: 1.1;
+    }
+
+    .why-box p {
+      color: #999;
+      margin-top: 18px;
+    }
+
+    .points {
+      display: grid;
+      gap: 15px;
+    }
+
+    .point {
+      padding: 20px;
+      border: 1px solid #292929;
+      border-radius: 10px;
+      background: #101010;
+    }
+
+    .point strong {
+      display: block;
+      margin-bottom: 5px;
+    }
+
+    .point span {
+      color: #888;
+      font-size: 14px;
+    }
+
+    /* CTA */
+
+    .cta {
+      text-align: center;
+      padding: 110px 20px;
+    }
+
+    .cta h2 {
+      font-size: clamp(40px, 6vw, 64px);
+      line-height: 1;
+      margin-bottom: 20px;
+    }
+
+    .cta p {
+      color: #999;
+      max-width: 600px;
+      margin: 0 auto 30px;
+    }
+
+    /* FOOTER */
+
+    footer {
+      border-top: 1px solid #222;
+      padding: 30px 0;
+      color: #777;
+      font-size: 13px;
+    }
+
+    .footer-inner {
+      display: flex;
+      justify-content: space-between;
+      gap: 20px;
+    }
+
+    /* MOBILE */
+
+    @media (max-width: 800px) {
+
+      .nav-links {
+        display: none;
+      }
+
+      .hero {
+        padding: 80px 0;
+      }
+
+      .hero h1 {
+        letter-spacing: -2px;
+      }
+
+      .services {
+        grid-template-columns: 1fr;
+      }
+
+      .process {
+        grid-template-columns: 1fr;
+      }
+
+      .why-box {
+        grid-template-columns: 1fr;
+      }
+
+      .footer-inner {
+        flex-direction: column;
+      }
+    }
+  </style>
 </head>
+
 <body>
 
-  <h1>Turn Your Marketing Budget Into Measurable Growth.</h1>
+  <!-- NAVIGATION -->
 
-  <p>
-    Markgenexs helps education, real estate and growing businesses generate qualified leads and acquire customers through performance marketing, lead generation and social media.
-  </p>
+  <nav>
+    <div class="container nav-inner">
 
-  <buttun>Get a Free Growth Audit</buttun>
+      <a href="#" class="logo">
+        MarkGenex<span>s</span>
+      </a>
+
+      <div class="nav-links">
+        <a href="#services">Services</a>
+        <a href="#process">How We Work</a>
+        <a href="#why">Why Us</a>
+      </div>
+
+      <a href="#contact" class="nav-button">
+        Get Started
+      </a>
+
+    </div>
+  </nav>
+
+
+  <!-- HERO -->
+
+  <main>
+
+    <section class="hero">
+
+      <div class="container">
+
+        <div class="eyebrow">
+          Growth Marketing Partner
+        </div>
+
+        <h1>
+          Turn Marketing Into
+          <span>Measurable Growth.</span>
+        </h1>
+
+        <p>
+          MarkGenexs helps ambitious businesses generate qualified leads,
+          acquire customers and scale through performance marketing.
+        </p>
+
+        <div class="hero-buttons">
+
+          <a href="#contact" class="primary-button">
+            Get a Free Growth Audit
+          </a>
+
+          <a href="#services" class="secondary-button">
+            Explore Services
+          </a>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- SERVICES -->
+
+    <section id="services">
+
+      <div class="container">
+
+        <div class="section-heading">
+
+          <h2>
+            Marketing built around business outcomes.
+          </h2>
+
+          <p>
+            We focus on the activities that can move your pipeline,
+            customer acquisition and revenue forward.
+          </p>
+
+        </div>
+
+
+        <div class="services">
+
+          <div class="service-card">
+
+            <div class="service-number">01</div>
+
+            <h3>
+              Performance Marketing
+            </h3>
+
+            <p>
+              Build and optimize paid campaigns designed around
+              measurable acquisition and growth.
+            </p>
+
+          </div>
+
+
+          <div class="service-card">
+
+            <div class="service-number">02</div>
+
+            <h3>
+              Lead Generation
+            </h3>
+
+            <p>
+              Create predictable systems for reaching and converting
+              qualified prospects.
+            </p>
+
+          </div>
+
+
+          <div class="service-card">
+
+            <div class="service-number">03</div>
+
+            <h3>
+              Social Media Marketing
+            </h3>
+
+            <p>
+              Build a stronger digital presence with content and
+              campaigns designed to support business growth.
+            </p>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- PROCESS -->
+
+    <section id="process">
+
+      <div class="container">
+
+        <div class="section-heading">
+
+          <h2>
+            A simple growth system.
+          </h2>
+
+          <p>
+            We don't believe in random marketing activity.
+            Every engagement starts with a clear process.
+          </p>
+
+        </div>
+
+
+        <div class="process">
+
+          <div class="process-step">
+            <strong>01. Audit</strong>
+            <span>Understand where you are.</span>
+          </div>
+
+          <div class="process-step">
+            <strong>02. Strategy</strong>
+            <span>Build the growth plan.</span>
+          </div>
+
+          <div class="process-step">
+            <strong>03. Launch</strong>
+            <span>Put campaigns into action.</span>
+          </div>
+
+          <div class="process-step">
+            <strong>04. Optimize</strong>
+            <span>Measure and improve.</span>
+          </div>
+
+          <div class="process-step">
+            <strong>05. Scale</strong>
+            <span>Invest more where it works.</span>
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- WHY MARKGENEXS -->
+
+    <section id="why">
+
+      <div class="container">
+
+        <div class="why-box">
+
+          <div>
+
+            <h2>
+              Less noise.
+              More measurable growth.
+            </h2>
+
+            <p>
+              MarkGenexs is being built around one simple principle:
+              marketing should ultimately contribute to business growth.
+            </p>
+
+          </div>
+
+
+          <div class="points">
+
+            <div class="point">
+              <strong>Business-first thinking</strong>
+              <span>
+                We start with your business objective, not a marketing trend.
+              </span>
+            </div>
+
+            <div class="point">
+              <strong>Performance focused</strong>
+              <span>
+                Campaigns and decisions should be measured against real outcomes.
+              </span>
+            </div>
+
+            <div class="point">
+              <strong>Continuous optimization</strong>
+              <span>
+                Test, learn, improve and scale what works.
+              </span>
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- CTA -->
+
+    <section id="contact">
+
+      <div class="container">
+
+        <div class="cta">
+
+          <h2>
+            Ready to grow?
+          </h2>
+
+          <p>
+            Let's understand your current marketing and identify
+            where your next growth opportunity could come from.
+          </p>
+
+          <a href="mailto:hello@markgenexs.com" class="primary-button">
+            Talk to MarkGenexs
+          </a>
+
+        </div>
+
+      </div>
+
+    </section>
+
+  </main>
+
+
+  <!-- FOOTER -->
+
+  <footer>
+
+    <div class="container footer-inner">
+
+      <div>
+        © 2026 MarkGenexs. All rights reserved.
+      </div>
+
+      <div>
+        Growth Marketing
+      </div>
+
+    </div>
+
+  </footer>
 
 </body>
 </html>
