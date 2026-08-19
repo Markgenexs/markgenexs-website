@@ -4,18 +4,31 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>MarkGenexs | Turn Marketing Into Measurable Growth</title>
+  <title>MarkGenexs | Turn Marketing Into Business Growth</title>
 
-  <meta
-    name="description"
-    content="MarkGenexs helps ambitious businesses generate qualified leads, acquire customers and scale through performance marketing."
-  >
+  <meta name="description"
+        content="MarkGenexs helps ambitious businesses generate qualified leads, acquire customers and build predictable growth through performance marketing, lead generation and social media.">
+
+  <meta name="robots" content="index, follow">
 
   <style>
+    :root {
+      --bg: #070b14;
+      --surface: #0d1422;
+      --surface-2: #111b2c;
+      --text: #f7f9fc;
+      --muted: #aab4c5;
+      --line: rgba(255,255,255,.10);
+      --blue: #2563eb;
+      --blue-dark: #1d4ed8;
+      --max: 1180px;
+      --radius: 18px;
+    }
+
     * {
+      box-sizing: border-box;
       margin: 0;
       padding: 0;
-      box-sizing: border-box;
     }
 
     html {
@@ -23,9 +36,9 @@
     }
 
     body {
-      font-family: Arial, Helvetica, sans-serif;
-      background: #0a0a0a;
-      color: #ffffff;
+      font-family: Inter, Arial, Helvetica, sans-serif;
+      background: var(--bg);
+      color: var(--text);
       line-height: 1.6;
     }
 
@@ -34,295 +47,434 @@
       text-decoration: none;
     }
 
-    .container {
-      width: min(1120px, 92%);
-      margin: 0 auto;
+    img {
+      max-width: 100%;
+      display: block;
     }
 
-    /* NAVBAR */
+    .container {
+      width: min(92%, var(--max));
+      margin: auto;
+    }
 
-    nav {
-      padding: 24px 0;
-      border-bottom: 1px solid #222;
+    .section {
+      padding: 90px 0;
+    }
+
+    .eyebrow {
+      color: #7da6ff;
+      font-size: .82rem;
+      font-weight: 800;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+      margin-bottom: 14px;
+    }
+
+    h1 {
+      font-size: clamp(2.8rem, 7vw, 5.8rem);
+      line-height: .98;
+      letter-spacing: -.055em;
+    }
+
+    h2 {
+      font-size: clamp(2rem, 4vw, 3.4rem);
+      line-height: 1.05;
+      letter-spacing: -.04em;
+      margin-bottom: 18px;
+    }
+
+    h3 {
+      font-size: 1.25rem;
+      margin-bottom: 10px;
+    }
+
+    p {
+      color: var(--muted);
+    }
+
+    .nav {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(7,11,20,.88);
+      backdrop-filter: blur(14px);
+      border-bottom: 1px solid var(--line);
     }
 
     .nav-inner {
+      min-height: 72px;
       display: flex;
-      justify-content: space-between;
       align-items: center;
+      justify-content: space-between;
+      gap: 24px;
     }
 
     .logo {
-      font-size: 24px;
-      font-weight: 800;
-      letter-spacing: -0.5px;
+      font-size: 1.35rem;
+      font-weight: 900;
+      letter-spacing: -.04em;
     }
 
     .logo span {
-      color: #8b5cf6;
+      color: #5b8cff;
     }
 
     .nav-links {
       display: flex;
-      gap: 28px;
-      color: #b5b5b5;
-      font-size: 14px;
+      gap: 24px;
+      align-items: center;
+      font-size: .92rem;
+      color: #cbd5e1;
     }
 
     .nav-links a:hover {
-      color: #ffffff;
+      color: white;
     }
 
-    .nav-button {
-      background: #ffffff;
-      color: #000000;
-      padding: 11px 18px;
-      border-radius: 8px;
-      font-weight: 700;
-      font-size: 14px;
+    .btn {
+      display: inline-flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 50px;
+      padding: 0 22px;
+      border-radius: 10px;
+      font-weight: 800;
+      border: 1px solid transparent;
+      transition: .2s ease;
+      cursor: pointer;
     }
 
-    /* HERO */
+    .btn-primary {
+      background: var(--blue);
+      color: white;
+    }
+
+    .btn-primary:hover {
+      background: var(--blue-dark);
+      transform: translateY(-1px);
+    }
+
+    .btn-secondary {
+      border-color: rgba(255,255,255,.18);
+      color: white;
+      background: rgba(255,255,255,.03);
+    }
+
+    .btn-secondary:hover {
+      background: rgba(255,255,255,.08);
+    }
 
     .hero {
-      padding: 110px 0 100px;
-      text-align: center;
+      padding: 120px 0 100px;
+      position: relative;
+      overflow: hidden;
     }
 
-    .eyebrow {
-      display: inline-block;
-      border: 1px solid #333;
-      color: #bdbdbd;
-      padding: 8px 14px;
-      border-radius: 999px;
-      font-size: 13px;
-      margin-bottom: 28px;
+    .hero:before {
+      content: "";
+      position: absolute;
+      width: 620px;
+      height: 620px;
+      background: rgba(37,99,235,.16);
+      filter: blur(120px);
+      border-radius: 50%;
+      top: -240px;
+      right: -180px;
+      pointer-events: none;
+    }
+
+    .hero-content {
+      max-width: 900px;
+      position: relative;
     }
 
     .hero h1 {
       max-width: 900px;
-      margin: 0 auto;
-      font-size: clamp(48px, 8vw, 88px);
-      line-height: 0.98;
-      letter-spacing: -4px;
+      margin-bottom: 28px;
     }
 
     .hero h1 span {
-      color: #8b5cf6;
+      color: #6d9bff;
     }
 
-    .hero p {
-      max-width: 680px;
-      margin: 30px auto;
-      color: #a9a9a9;
-      font-size: 18px;
+    .hero-copy {
+      max-width: 690px;
+      font-size: 1.18rem;
+      margin-bottom: 32px;
     }
 
-    .hero-buttons {
+    .hero-actions {
       display: flex;
-      justify-content: center;
-      gap: 14px;
-      margin-top: 34px;
       flex-wrap: wrap;
+      gap: 14px;
     }
 
-    .primary-button {
-      background: #8b5cf6;
-      color: #ffffff;
-      padding: 15px 24px;
-      border-radius: 8px;
-      font-weight: 700;
+    .trust-line {
+      margin-top: 30px;
+      font-size: .9rem;
+      color: #7f8da3;
     }
 
-    .secondary-button {
-      border: 1px solid #333;
-      padding: 15px 24px;
-      border-radius: 8px;
-      color: #ffffff;
-    }
-
-    /* SECTION */
-
-    section {
-      padding: 90px 0;
-      border-top: 1px solid #1d1d1d;
-    }
-
-    .section-heading {
-      max-width: 650px;
-      margin-bottom: 45px;
-    }
-
-    .section-heading h2 {
-      font-size: 42px;
-      line-height: 1.1;
-      margin-bottom: 15px;
-    }
-
-    .section-heading p {
-      color: #999;
-    }
-
-    /* SERVICES */
-
-    .services {
+    .grid {
       display: grid;
-      grid-template-columns: repeat(3, 1fr);
       gap: 18px;
     }
 
-    .service-card {
-      border: 1px solid #292929;
-      border-radius: 14px;
-      padding: 30px;
-      background: #101010;
+    .three {
+      grid-template-columns: repeat(3, 1fr);
     }
 
-    .service-number {
-      color: #8b5cf6;
-      font-size: 14px;
-      font-weight: 700;
-      margin-bottom: 25px;
+    .four {
+      grid-template-columns: repeat(4, 1fr);
     }
 
-    .service-card h3 {
-      font-size: 22px;
-      margin-bottom: 12px;
+    .card {
+      background: linear-gradient(145deg, var(--surface), rgba(13,20,34,.62));
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      padding: 28px;
     }
 
-    .service-card p {
-      color: #999;
-      font-size: 15px;
+    .card p {
+      font-size: .96rem;
     }
 
-    /* PROCESS */
-
-    .process {
-      display: grid;
-      grid-template-columns: repeat(5, 1fr);
-      gap: 12px;
+    .problem {
+      background: #0a101b;
+      border-top: 1px solid var(--line);
+      border-bottom: 1px solid var(--line);
     }
 
-    .process-step {
-      padding: 24px 10px;
-      border-top: 2px solid #8b5cf6;
+    .problem-copy {
+      max-width: 760px;
+      margin-bottom: 38px;
     }
 
-    .process-step strong {
+    .number {
+      font-size: 2rem;
+      font-weight: 900;
+      margin-bottom: 18px;
+      color: #6d9bff;
+    }
+
+    .section-heading {
+      max-width: 760px;
+      margin-bottom: 42px;
+    }
+
+    .industry-card {
+      min-height: 190px;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+    }
+
+    .industry-card strong {
       display: block;
+      font-size: 1.15rem;
       margin-bottom: 8px;
     }
 
-    .process-step span {
-      color: #888;
-      font-size: 14px;
+    .why {
+      background: #0a101b;
     }
 
-    /* WHY */
-
-    .why-box {
+    .check-list {
       display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 40px;
-      align-items: center;
+      gap: 18px;
+      margin-top: 32px;
     }
 
-    .why-box h2 {
-      font-size: 44px;
-      line-height: 1.1;
+    .check {
+      display: flex;
+      gap: 14px;
+      align-items: flex-start;
     }
 
-    .why-box p {
-      color: #999;
-      margin-top: 18px;
-    }
-
-    .points {
+    .check-mark {
+      width: 28px;
+      height: 28px;
+      border-radius: 50%;
+      background: rgba(37,99,235,.18);
+      color: #79a1ff;
       display: grid;
-      gap: 15px;
+      place-items: center;
+      flex: 0 0 auto;
+      font-weight: 900;
     }
 
-    .point {
+    .case-study {
+      border: 1px solid rgba(80,126,255,.28);
+      background:
+        linear-gradient(135deg, rgba(37,99,235,.13), rgba(13,20,34,.9));
+      border-radius: 24px;
+      padding: clamp(28px, 5vw, 54px);
+    }
+
+    .case-label {
+      display: inline-block;
+      padding: 7px 12px;
+      border-radius: 99px;
+      border: 1px solid rgba(125,166,255,.25);
+      color: #8fb2ff;
+      font-size: .78rem;
+      font-weight: 800;
+      margin-bottom: 20px;
+    }
+
+    .case-study p {
+      max-width: 760px;
+    }
+
+    .case-points {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 14px;
+      margin-top: 30px;
+    }
+
+    .case-point {
       padding: 20px;
-      border: 1px solid #292929;
-      border-radius: 10px;
-      background: #101010;
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      background: rgba(0,0,0,.12);
     }
 
-    .point strong {
+    .case-point strong {
       display: block;
       margin-bottom: 5px;
     }
 
-    .point span {
-      color: #888;
-      font-size: 14px;
+    .process-card {
+      position: relative;
     }
 
-    /* CTA */
+    .process-number {
+      font-size: .82rem;
+      font-weight: 900;
+      color: #6d9bff;
+      margin-bottom: 25px;
+    }
 
-    .cta {
+    .cta-section {
+      background:
+        radial-gradient(circle at 80% 20%, rgba(37,99,235,.18), transparent 32%),
+        #0a101b;
+    }
+
+    .cta-box {
+      border: 1px solid var(--line);
+      border-radius: 24px;
+      padding: clamp(30px, 6vw, 65px);
       text-align: center;
-      padding: 110px 20px;
+      background: linear-gradient(145deg, #101a2b, #0b111d);
     }
 
-    .cta h2 {
-      font-size: clamp(40px, 6vw, 64px);
-      line-height: 1;
-      margin-bottom: 20px;
+    .cta-box p {
+      max-width: 650px;
+      margin: 0 auto 28px;
     }
 
-    .cta p {
-      color: #999;
-      max-width: 600px;
-      margin: 0 auto 30px;
+    .form-wrap {
+      max-width: 850px;
+      margin: 50px auto 0;
+      text-align: left;
     }
 
-    /* FOOTER */
+    form {
+      display: grid;
+      gap: 16px;
+    }
+
+    .form-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+    }
+
+    label {
+      display: grid;
+      gap: 7px;
+      font-size: .85rem;
+      color: #dbe4f1;
+      font-weight: 700;
+    }
+
+    input,
+    select,
+    textarea {
+      width: 100%;
+      border: 1px solid rgba(255,255,255,.13);
+      border-radius: 10px;
+      background: #080e18;
+      color: white;
+      padding: 13px 14px;
+      font: inherit;
+      outline: none;
+    }
+
+    input:focus,
+    select:focus,
+    textarea:focus {
+      border-color: #4e80f4;
+    }
+
+    textarea {
+      min-height: 130px;
+      resize: vertical;
+    }
+
+    .form-submit {
+      width: fit-content;
+      margin-top: 4px;
+    }
+
+    .form-note {
+      font-size: .78rem;
+      color: #7f8da3;
+    }
+
+    .success {
+      margin-top: 18px;
+      padding: 16px;
+      border: 1px solid rgba(60,200,130,.3);
+      border-radius: 10px;
+      background: rgba(60,200,130,.08);
+      color: #a8e8c9;
+    }
 
     footer {
-      border-top: 1px solid #222;
-      padding: 30px 0;
-      color: #777;
-      font-size: 13px;
+      border-top: 1px solid var(--line);
+      padding: 35px 0;
     }
 
     .footer-inner {
       display: flex;
       justify-content: space-between;
       gap: 20px;
+      flex-wrap: wrap;
+      color: #7f8da3;
+      font-size: .88rem;
     }
 
-    /* MOBILE */
-
-    @media (max-width: 800px) {
-
+    @media (max-width: 850px) {
       .nav-links {
         display: none;
       }
 
+      .three,
+      .four,
+      .case-points,
+      .form-grid {
+        grid-template-columns: 1fr;
+      }
+
       .hero {
-        padding: 80px 0;
+        padding-top: 85px;
       }
 
-      .hero h1 {
-        letter-spacing: -2px;
-      }
-
-      .services {
-        grid-template-columns: 1fr;
-      }
-
-      .process {
-        grid-template-columns: 1fr;
-      }
-
-      .why-box {
-        grid-template-columns: 1fr;
-      }
-
-      .footer-inner {
-        flex-direction: column;
+      .section {
+        padding: 70px 0;
       }
     }
   </style>
@@ -331,286 +483,568 @@
 <body>
 
   <!-- NAVIGATION -->
-
-  <nav>
+  <header class="nav">
     <div class="container nav-inner">
+      <a href="#top" class="logo">Mark<span>Genexs</span></a>
 
-      <a href="#" class="logo">
-        MarkGenex<span>s</span>
-      </a>
-
-      <div class="nav-links">
+      <nav class="nav-links">
         <a href="#services">Services</a>
+        <a href="#industries">Industries</a>
+        <a href="#results">Results</a>
         <a href="#process">How We Work</a>
-        <a href="#why">Why Us</a>
-      </div>
+      </nav>
 
-      <a href="#contact" class="nav-button">
-        Get Started
+      <a href="#growth-plan" class="btn btn-primary">
+        Build My Growth Plan
       </a>
-
     </div>
-  </nav>
+  </header>
 
 
-  <!-- HERO -->
+  <main id="top">
 
-  <main>
-
+    <!-- HERO -->
     <section class="hero">
+      <div class="container">
+        <div class="hero-content">
 
+          <div class="eyebrow">
+            Growth Marketing Built Around Results
+          </div>
+
+          <h1>
+            Turn Your Marketing Budget Into
+            <span>Business Growth.</span>
+          </h1>
+
+          <p class="hero-copy">
+            MarkGenexs helps ambitious businesses generate qualified leads,
+            acquire customers and build a more predictable growth engine
+            through focused marketing execution.
+          </p>
+
+          <div class="hero-actions">
+            <a href="#growth-plan" class="btn btn-primary">
+              Build My Growth Plan →
+            </a>
+
+            <a href="#results" class="btn btn-secondary">
+              See How We Drive Growth
+            </a>
+          </div>
+
+          <p class="trust-line">
+            Strategy • Execution • Optimization • Growth
+          </p>
+
+        </div>
+      </div>
+    </section>
+
+
+    <!-- PROBLEM -->
+    <section class="section problem">
       <div class="container">
 
-        <div class="eyebrow">
-          Growth Marketing Partner
+        <div class="section-heading">
+          <div class="eyebrow">The Growth Problem</div>
+
+          <h2>
+            More marketing activity doesn't always mean more business.
+          </h2>
+
+          <p>
+            Businesses often spend on campaigns, platforms and content
+            without a clear connection between marketing activity and
+            commercial outcomes.
+          </p>
         </div>
 
-        <h1>
-          Turn Marketing Into
-          <span>Measurable Growth.</span>
-        </h1>
+        <div class="grid three">
 
-        <p>
-          MarkGenexs helps ambitious businesses generate qualified leads,
-          acquire customers and scale through performance marketing.
-        </p>
+          <article class="card">
+            <div class="number">01</div>
+            <h3>Scattered Marketing</h3>
+            <p>
+              Multiple channels without one clear acquisition strategy.
+            </p>
+          </article>
 
-        <div class="hero-buttons">
+          <article class="card">
+            <div class="number">02</div>
+            <h3>Unqualified Leads</h3>
+            <p>
+              Lead volume can look impressive while sales opportunities
+              remain weak.
+            </p>
+          </article>
 
-          <a href="https://forms.gle/3o1j2KUkE1dxZV3o7" class="primary-button">
-            Get a Free Growth Audit
-          </a>
-
-          <a href="#services" class="secondary-button">
-            Explore Services
-          </a>
+          <article class="card">
+            <div class="number">03</div>
+            <h3>No Clear Growth Loop</h3>
+            <p>
+              Campaigns run, but learning and optimization don't compound
+              into a repeatable system.
+            </p>
+          </article>
 
         </div>
-
       </div>
-
     </section>
 
 
     <!-- SERVICES -->
-
-    <section id="services">
-
+    <section class="section" id="services">
       <div class="container">
 
         <div class="section-heading">
+          <div class="eyebrow">What We Do</div>
 
           <h2>
-            Marketing built around business outcomes.
+            Three growth levers. One business goal.
           </h2>
 
           <p>
-            We focus on the activities that can move your pipeline,
-            customer acquisition and revenue forward.
+            We focus on the marketing activities closest to customer
+            acquisition and business growth.
           </p>
-
         </div>
 
+        <div class="grid three">
 
-        <div class="services">
-
-          <div class="service-card">
-
-            <div class="service-number">01</div>
-
-            <h3>
-              Performance Marketing
-            </h3>
-
+          <article class="card">
+            <h3>Lead Generation</h3>
             <p>
-              Build and optimize paid campaigns designed around
-              measurable acquisition and growth.
+              Build targeted acquisition campaigns that put your offer
+              in front of potential customers and create sales opportunities.
             </p>
+          </article>
 
-          </div>
-
-
-          <div class="service-card">
-
-            <div class="service-number">02</div>
-
-            <h3>
-              Lead Generation
-            </h3>
-
+          <article class="card">
+            <h3>Performance Marketing</h3>
             <p>
-              Create predictable systems for reaching and converting
-              qualified prospects.
+              Use paid campaigns, testing and optimization to improve
+              acquisition efficiency and move marketing closer to measurable
+              commercial outcomes.
             </p>
+          </article>
 
-          </div>
-
-
-          <div class="service-card">
-
-            <div class="service-number">03</div>
-
-            <h3>
-              Social Media Marketing
-            </h3>
-
+          <article class="card">
+            <h3>Social Media Marketing</h3>
             <p>
-              Build a stronger digital presence with content and
-              campaigns designed to support business growth.
+              Build a credible digital presence and turn content and
+              social channels into part of your customer acquisition system.
             </p>
-
-          </div>
+          </article>
 
         </div>
-
       </div>
-
     </section>
 
 
-    <!-- PROCESS -->
-
-    <section id="process">
-
+    <!-- INDUSTRIES -->
+    <section class="section" id="industries">
       <div class="container">
 
         <div class="section-heading">
+          <div class="eyebrow">Industries We Serve</div>
 
           <h2>
-            A simple growth system.
+            Growth strategies built around the business you're actually in.
           </h2>
 
           <p>
-            We don't believe in random marketing activity.
-            Every engagement starts with a clear process.
+            We start with the economics, customer journey and acquisition
+            challenge before deciding what marketing should look like.
           </p>
-
         </div>
 
+        <div class="grid three">
 
-        <div class="process">
+          <article class="card industry-card">
+            <strong>Education & EdTech</strong>
+            <p>
+              Lead generation and performance campaigns for education
+              companies, institutions and education-focused businesses.
+            </p>
+          </article>
 
-          <div class="process-step">
-            <strong>01. Audit</strong>
-            <span>Understand where you are.</span>
-          </div>
+          <article class="card industry-card">
+            <strong>Real Estate</strong>
+            <p>
+              Acquisition-focused campaigns designed around enquiries,
+              qualified prospects and sales opportunities.
+            </p>
+          </article>
 
-          <div class="process-step">
-            <strong>02. Strategy</strong>
-            <span>Build the growth plan.</span>
-          </div>
-
-          <div class="process-step">
-            <strong>03. Launch</strong>
-            <span>Put campaigns into action.</span>
-          </div>
-
-          <div class="process-step">
-            <strong>04. Optimize</strong>
-            <span>Measure and improve.</span>
-          </div>
-
-          <div class="process-step">
-            <strong>05. Scale</strong>
-            <span>Invest more where it works.</span>
-          </div>
+          <article class="card industry-card">
+            <strong>Startups & Growing Businesses</strong>
+            <p>
+              Practical growth marketing for businesses looking to establish
+              repeatable customer acquisition.
+            </p>
+          </article>
 
         </div>
-
       </div>
-
     </section>
 
 
     <!-- WHY MARKGENEXS -->
-
-    <section id="why">
-
+    <section class="section why">
       <div class="container">
 
-        <div class="why-box">
-
-          <div>
-
-            <h2>
-              Less noise.
-              More measurable growth.
-            </h2>
-
-            <p>
-              MarkGenexs is being built around one simple principle:
-              marketing should ultimately contribute to business growth.
-            </p>
-
-          </div>
-
-
-          <div class="points">
-
-            <div class="point">
-              <strong>Business-first thinking</strong>
-              <span>
-                We start with your business objective, not a marketing trend.
-              </span>
-            </div>
-
-            <div class="point">
-              <strong>Performance focused</strong>
-              <span>
-                Campaigns and decisions should be measured against real outcomes.
-              </span>
-            </div>
-
-            <div class="point">
-              <strong>Continuous optimization</strong>
-              <span>
-                Test, learn, improve and scale what works.
-              </span>
-            </div>
-
-          </div>
-
-        </div>
-
-      </div>
-
-    </section>
-
-
-    <!-- CTA -->
-
-    <section id="contact">
-
-      <div class="container">
-
-        <div class="cta">
+        <div class="section-heading">
+          <div class="eyebrow">Why MarkGenexs</div>
 
           <h2>
-            Ready to grow?
+            We don't want to look busy. We want to move the business forward.
           </h2>
 
           <p>
-            Let's understand your current marketing and identify
-            where your next growth opportunity could come from.
+            Our approach combines strategy, execution and continuous
+            optimization around the outcomes that matter to the business.
           </p>
-
-          <a href="mailto:markgenexs@gmail.com" class="primary-button">
-            Talk to MarkGenexs
-          </a>
-
         </div>
 
-      </div>
+        <div class="check-list">
 
+          <div class="check">
+            <div class="check-mark">✓</div>
+            <div>
+              <h3>Business-first thinking</h3>
+              <p>
+                We start with your customer, offer and business objective —
+                not with a random list of marketing tactics.
+              </p>
+            </div>
+          </div>
+
+          <div class="check">
+            <div class="check-mark">✓</div>
+            <div>
+              <h3>Execution that moves quickly</h3>
+              <p>
+                We turn strategy into campaigns, tests and actions instead
+                of letting plans sit in presentations.
+              </p>
+            </div>
+          </div>
+
+          <div class="check">
+            <div class="check-mark">✓</div>
+            <div>
+              <h3>Continuous optimization</h3>
+              <p>
+                We use campaign performance and market feedback to improve
+                what works and reduce what doesn't.
+              </p>
+            </div>
+          </div>
+
+          <div class="check">
+            <div class="check-mark">✓</div>
+            <div>
+              <h3>Transparent communication</h3>
+              <p>
+                Clear reporting, clear priorities and a shared understanding
+                of what is happening next.
+              </p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+
+    <!-- CASE STUDY -->
+    <section class="section" id="results">
+      <div class="container">
+
+        <div class="section-heading">
+          <div class="eyebrow">Results / Case Study</div>
+
+          <h2>
+            Building a growth engine with EduBh.
+          </h2>
+        </div>
+
+        <div class="case-study">
+
+          <div class="case-label">
+            EDUCATION / EDTECH
+          </div>
+
+          <h2>
+            From lead generation activity to a stronger admissions pipeline.
+          </h2>
+
+          <p>
+            EduBh is an education business where MarkGenexs has worked on
+            customer acquisition and lead generation. We focused on reaching
+            relevant prospects through targeted campaigns and improving the
+            path from marketing activity to admissions.
+          </p>
+
+          <div class="case-points">
+
+            <div class="case-point">
+              <strong>Lead Generation</strong>
+              <span>
+                Targeted acquisition campaigns designed around education
+                prospects.
+              </span>
+            </div>
+
+            <div class="case-point">
+              <strong>Internshala</strong>
+              <span>
+                Used as one of the acquisition channels to support the
+                admissions pipeline.
+              </span>
+            </div>
+
+            <div class="case-point">
+              <strong>Google Ads</strong>
+              <span>
+                Added paid search as another acquisition channel to expand
+                the growth system.
+              </span>
+            </div>
+
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+
+    <!-- PROCESS -->
+    <section class="section" id="process">
+      <div class="container">
+
+        <div class="section-heading">
+          <div class="eyebrow">How We Work</div>
+
+          <h2>
+            Simple process. Serious execution.
+          </h2>
+
+          <p>
+            We keep the process focused so that strategy quickly becomes
+            measurable action.
+          </p>
+        </div>
+
+        <div class="grid four">
+
+          <article class="card process-card">
+            <div class="process-number">01 / UNDERSTAND</div>
+            <h3>Understand</h3>
+            <p>
+              Your business, customer, offer, economics and growth challenge.
+            </p>
+          </article>
+
+          <article class="card process-card">
+            <div class="process-number">02 / STRATEGIZE</div>
+            <h3>Strategize</h3>
+            <p>
+              Select the channels, audience and acquisition approach that
+              make commercial sense.
+            </p>
+          </article>
+
+          <article class="card process-card">
+            <div class="process-number">03 / LAUNCH</div>
+            <h3>Launch</h3>
+            <p>
+              Put campaigns, creative and tracking into the market quickly.
+            </p>
+          </article>
+
+          <article class="card process-card">
+            <div class="process-number">04 / OPTIMIZE</div>
+            <h3>Optimize</h3>
+            <p>
+              Learn from performance, improve the system and scale what works.
+            </p>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+
+    <!-- CTA + FORM -->
+    <section class="section cta-section" id="growth-plan">
+      <div class="container">
+
+        <div class="cta-box">
+
+          <div class="eyebrow">Let's Find Your Next Growth Opportunity</div>
+
+          <h2>
+            Tell us where you want to grow.
+          </h2>
+
+          <p>
+            Share a few details about your business and we'll use them to
+            understand where your biggest growth opportunity may be.
+          </p>
+
+          <div class="form-wrap">
+
+            <form id="growth-form">
+
+              <div class="form-grid">
+
+                <label>
+                  Name *
+                  <input
+                    type="text"
+                    name="name"
+                    placeholder="Your name"
+                    required
+                  >
+                </label>
+
+                <label>
+                  Email *
+                  <input
+                    type="email"
+                    name="email"
+                    placeholder="you@company.com"
+                    required
+                  >
+                </label>
+
+              </div>
+
+              <div class="form-grid">
+
+                <label>
+                  Company *
+                  <input
+                    type="text"
+                    name="company"
+                    placeholder="Company name"
+                    required
+                  >
+                </label>
+
+                <label>
+                  Website
+                  <input
+                    type="url"
+                    name="website"
+                    placeholder="https://yourwebsite.com"
+                  >
+                </label>
+
+              </div>
+
+              <div class="form-grid">
+
+                <label>
+                  Industry
+                  <select name="industry">
+                    <option value="">Select industry</option>
+                    <option value="Education & EdTech">Education & EdTech</option>
+                    <option value="Real Estate">Real Estate</option>
+                    <option value="Startup">Startup / Growing Business</option>
+                    <option value="Other">Other</option>
+                  </select>
+                </label>
+
+                <label>
+                  What do you need help with?
+                  <select name="need">
+                    <option value="">Select an area</option>
+                    <option value="Lead Generation">Lead Generation</option>
+                    <option value="Performance Marketing">Performance Marketing</option>
+                    <option value="Social Media Marketing">Social Media Marketing</option>
+                    <option value="Growth Strategy">Growth Strategy</option>
+                    <option value="Multiple">Multiple Areas</option>
+                  </select>
+                </label>
+
+              </div>
+
+              <div class="form-grid">
+
+                <label>
+                  Monthly marketing budget
+                  <select name="budget">
+                    <option value="">Select range</option>
+                    <option value="Under 25k">Under ₹25K</option>
+                    <option value="25k-50k">₹25K – ₹50K</option>
+                    <option value="50k-1L">₹50K – ₹1L</option>
+                    <option value="1L+">₹1L+</option>
+                    <option value="Not sure">Not sure yet</option>
+                  </select>
+                </label>
+
+                <label>
+                  Biggest challenge
+                  <input
+                    type="text"
+                    name="challenge"
+                    placeholder="What's stopping growth right now?"
+                  >
+                </label>
+
+              </div>
+
+              <label>
+                Anything else we should know?
+                <textarea
+                  name="message"
+                  placeholder="Tell us briefly about your business and what you're trying to achieve."
+                ></textarea>
+              </label>
+
+              <input
+                type="hidden"
+                name="source"
+                value="markgenexs_website_v1"
+              >
+
+              <button
+                type="submit"
+                class="btn btn-primary form-submit"
+              >
+                Build My Growth Plan →
+              </button>
+
+              <p class="form-note">
+                Your information is used only to understand your growth
+                requirements and respond to your enquiry.
+              </p>
+
+              <div
+                id="form-success"
+                class="success"
+                hidden
+              >
+                Thanks — we've received your growth request.
+                We'll review the information and get back to you.
+              </div>
+
+            </form>
+
+          </div>
+
+        </div>
+      </div>
     </section>
 
   </main>
 
 
   <!-- FOOTER -->
-
   <footer>
-
     <div class="container footer-inner">
 
       <div>
@@ -618,12 +1052,103 @@
       </div>
 
       <div>
-        Growth Marketing
+        Growth Marketing • Lead Generation • Performance Marketing
       </div>
 
     </div>
-
   </footer>
+
+
+  <script>
+    /*
+      MARKGENEXS V1 — LEAD CAPTURE
+
+      Website
+          ↓
+      Google Apps Script
+          ↓
+      Growth Leads Google Sheet
+
+      Email notification will be connected after
+      the Sheet submission is verified.
+    */
+
+    const GROWTH_FORM_ENDPOINT =
+      "https://script.google.com/macros/s/AKfycbzlePElUO_rKkrOrh7MKW8XZSG-FqcHphTgbpIEFLniIMa-IIW6_cqE7a3MGIZVD-dzYg/exec";
+
+    const growthForm = document.querySelector("#growth-form");
+    const formSuccess = document.querySelector("#form-success");
+
+    if (growthForm) {
+
+      growthForm.addEventListener("submit", async function(event) {
+
+        event.preventDefault();
+
+        if (!growthForm.checkValidity()) {
+          growthForm.reportValidity();
+          return;
+        }
+
+        const submitButton =
+          growthForm.querySelector(".form-submit");
+
+        const originalText = submitButton.innerHTML;
+
+        submitButton.disabled = true;
+        submitButton.innerHTML = "Sending…";
+
+        const data =
+          Object.fromEntries(
+            new FormData(growthForm).entries()
+          );
+
+        try {
+
+          await fetch(
+            GROWTH_FORM_ENDPOINT,
+            {
+              method: "POST",
+              mode: "no-cors",
+              headers: {
+                "Content-Type":
+                  "text/plain;charset=utf-8"
+              },
+              body: JSON.stringify(data)
+            }
+          );
+
+          growthForm.reset();
+
+          formSuccess.hidden = false;
+
+          formSuccess.scrollIntoView({
+            behavior: "smooth",
+            block: "nearest"
+          });
+
+        } catch (error) {
+
+          console.error(
+            "Growth Plan submission failed:",
+            error
+          );
+
+          alert(
+            "We couldn't submit the form right now. Please try again."
+          );
+
+        } finally {
+
+          submitButton.disabled = false;
+          submitButton.innerHTML = originalText;
+
+        }
+
+      });
+
+    }
+  </script>
 
 </body>
 </html>
